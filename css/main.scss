@@ -1,0 +1,422 @@
+$sizePx: 100px;
+$sizeDeg: 100%;
+$fontsizeTitle: 1.8rem;
+$colorMain: #274d87;
+$background-color: #e1f5fe;
+$colorW: #fff;
+
+body {
+    font-family: 'Roboto',
+    sans-serif;
+}
+
+.wrapper__center {
+    width: $sizeDeg*0.6;
+    margin: 0 auto;
+}
+
+// wrapper
+
+.wrapper {   
+    margin: 0 auto;
+    
+    // header
+
+    .bg1 {
+        background: url(../img/ship-main1.jpg) no-repeat scroll center center;
+        background-size: cover;
+        transition: 2s background;
+    }
+
+    .bg2 {
+        background: url(../img/ship-main2.jpg) no-repeat scroll center center;
+        background-size: cover;
+        transition: 2s background;
+    }
+
+    .bg3 {
+        background: url(../img/ship-main3.jpg) no-repeat scroll center center;
+        background-size: cover;
+        transition: 2s background;
+    }
+
+    .header {
+        
+        .header__wrap-primary {
+            background-color: rgba($color: #222222, $alpha: .8);                  
+            
+            .header__wrap-secondary {
+                display: flex;
+
+                .header__logo-wrap {
+                    width: $sizeDeg/2.5;
+                    padding: $sizePx/5 0;                    
+                }
+    
+                .logo__img {
+                    width: $sizeDeg*0.6;   
+                    min-width: $sizePx;         
+                }
+    
+                .header__nav {
+                    width: $sizeDeg*0.6;
+                    display: flex;       
+                    justify-content: flex-end;     
+                    align-items: center;
+                    flex-wrap: wrap;
+                }
+    
+                .header-nav__links {
+                    padding-left: $sizePx/5;
+                    color: $colorW;
+                    text-decoration: none;
+                }
+    
+                .header-nav__links:hover {
+                    color: darken($colorW, 20%);
+                }   
+            }
+        }
+
+        // heading
+
+        .wrapper__heading {
+            width: $sizeDeg*0.6;
+            margin: 0 auto;
+            padding: $sizeDeg/10 0 $sizeDeg/12 0;
+
+            .heading__title {
+                font-size: 2.5rem;
+                font-style: italic;
+                font-weight: bold;
+                color: lighten($colorMain, 5%);
+                text-shadow: 1px 0px 0px #efaf33,
+                3px 1px 0px #efaf33;
+                margin-bottom: $sizePx/10;
+            }
+
+            .heading__item {                
+                padding: $sizePx/8 $sizePx/5;
+                border-radius: $sizePx/25;
+                background-color: transparentize($colorW, $amount: .3);                              
+                transform: scaleX(1.04);            
+            }
+        }
+    }
+
+    // about us conteiner
+
+    .about-us__primary-wrap {
+        background-color: $background-color;
+        background-image: url(../img/cartoon-ship-vector-clipart.png);
+        background-size: cover;
+        background-position-y: $sizeDeg/6;
+        
+        .about-us__tabs {
+            font-size: 0;            
+        }
+
+        #tab-btn-ua,
+        #tab-btn-ru,
+        #tab-btn-uk,
+        #tab-btn-hr {
+            display: none;        
+        }
+
+        #content-ua,
+        #content-ru,
+        #content-uk,
+        #content-hr {
+            display: none;           
+            font-size: 1rem;
+            border-top: 6px solid lighten($colorMain, 35%);
+        }
+
+        #tab-btn-ua:checked~#content-ua,
+        #tab-btn-ru:checked~#content-ru,
+        #tab-btn-uk:checked~#content-uk,
+        #tab-btn-hr:checked~#content-hr {
+            display: block;
+        }
+
+        .about-us__tabs>label {
+            display: inline-block;            
+            vertical-align: middle;
+            text-align: center;            
+            color: #000;
+            background-color: lighten($colorMain, 55%);
+            border-radius: 40% 40% 0 0 / 80% 80% 0 0;
+            padding: $sizePx/15 $sizePx/3.3 $sizePx/15 $sizePx/2.5;
+            font-size: 1rem;           
+            transition: color 0.15s ease-in-out,
+            background-color 0.15s ease-in-out;
+            cursor: pointer;            
+        }
+
+        .tab-btn__item {
+            background-repeat: no-repeat;
+            background-size: $sizeDeg/6;
+            background-position: $sizePx/4.4 $sizePx/25;           
+        }
+
+        .ua {
+            background-image: url(../img/ukraine.png);
+        }
+
+        .ru {
+            background-image: url(../img/russia.png);
+        }
+
+        .uk {
+            background-image: url(../img/united-kingdom.png);
+        }
+
+        .hr {
+            background-image: url(../img/croatia.png);
+        }
+       
+        .about-us__tabs>input:checked+label {
+            background-color: lighten($colorMain, 35%);            
+            color: $colorW;    
+        }       
+
+        .about-us-title__wrap {
+            padding: $sizePx/10 $sizePx/10 $sizePx/10 0;
+            margin: 0 $sizePx/10;
+            
+            .about-us__title {
+                border-bottom: 1px solid $colorMain;
+                font-size: $fontsizeTitle;
+                text-align: center;
+            }
+        }
+
+        .about-us-list__title {            
+            background-color: rgba($color: #829ec2, $alpha: .5);
+            background-image: url(../img/cruise.png);
+            background-repeat: no-repeat;
+            background-size: $sizePx/6;
+            background-position: 5px 5px;
+            padding: $sizePx/10 $sizePx/7;
+            text-indent: $sizePx/5;
+            line-height: 1.2;
+            box-shadow: 1px 5px 8px #747475;
+            margin-bottom: $sizePx/7;
+        }
+
+        .about-us-content__items {
+            
+            .about-us-content__list-items {
+                padding-bottom: $sizePx/10;               
+                list-style-image: url(../img/sailing-boat.png);
+                list-style-position: inside;
+            }
+
+            .about-us-content__list-items-special {
+                list-style-image: url(../img/settings.png);
+            }
+        }
+    }
+
+    // services conteiner
+
+    .services__primary-wrap {
+        background-color: $colorMain;
+
+        .services__secondary-wrap {
+
+            .services__title-wrap {
+                color: $colorW;
+                text-align: center;                
+                padding-top: $sizePx/6;
+
+                .services__title {
+                    font-size: $fontsizeTitle;
+                }
+            }
+
+            .services-img__wrap {
+                margin-top: $sizePx/10;
+
+                .services__img {
+                    margin: $sizePx/10 $sizeDeg/12 0 $sizeDeg/50;
+                    width: $sizeDeg/4.5;
+                }
+            }
+
+            // services navigation
+
+            .services-nav__wrap {
+                display: flex;
+                justify-content: center;
+                padding: $sizePx/5 0 $sizePx/10 0;
+
+                .services__nav {
+                    width: $sizeDeg/2;
+                    background-color: #245e87;
+                    box-shadow: 1px 2px 4px #000;
+                    
+                    .services-nav__items {
+                        padding: $sizePx/10;
+                        text-align: center;
+                        border-bottom: 1px solid #1f5276;
+                    
+                        .services-nav__links {
+                            color: $colorW;
+                            text-decoration: none;
+                        }
+
+                        .services-nav__links:hover {
+                            color: darken($colorW, 20%);
+                        }
+                    }
+                    
+                    .services-nav__items:active {
+                        border: 1px inset #1f5276;
+                    } 
+                }
+            }
+        }
+    }
+
+    // discription conteiner
+
+    .discriptions__primary-wrap {
+        background-color: $background-color;
+
+        .discriptions__secondary-wrap {
+
+            .discription-content__primary-wrap {
+                
+                .discription__title {
+                    font-size: $fontsizeTitle;
+                    text-align: center;                    
+                    padding: $sizePx/6;
+                }
+    
+                .discription-content__secondary-wrap {
+                    display: flex;
+    
+                    .discription-img__wrap {
+                        width: $sizeDeg/2.2;
+                        
+                        .discription__img {
+                            width: $sizeDeg;
+                        }
+                    }
+    
+                    .discription-item__wrap {
+                        width: $sizeDeg/1.8;
+                        margin-left: $sizeDeg/25;
+    
+                        .discription__item {
+                            margin-bottom: $sizePx/10;
+                            text-indent: $sizeDeg/25;
+                            line-height: 1.2;
+                        }                        
+                    }
+    
+                    .discription-list__content {
+                        width: $sizeDeg/2.2;
+                        margin-right: $sizeDeg/80;
+                        line-height: 1.5;
+    
+                        .discription-list__item {
+                            list-style-image: url(../img/sailboat.png);                        
+                        }
+                    }
+                }  
+                
+                .discription-content__third-wrap {
+                    display: flex;
+                    margin-top: $sizeDeg/15;
+                    
+                    .discription-third-img__wrap {
+                        width: $sizeDeg/2;
+                        margin-top: $sizeDeg/20;
+                        transform: translateX(-30px);                        
+                       
+                        .discription-content-third-wrap__img {
+                            width: $sizeDeg/2;
+                            min-width: $sizePx;
+                            opacity: .3;
+                        }
+                    }
+
+                    .discription-content-third-wrap__item-wrap {
+                        padding: $sizePx/10;
+
+                        .discription-content-third-wrap__item {
+                            background-image: url(../img/pin.png);
+                            background-repeat: no-repeat;
+                            background-size: $sizePx/2.5;
+                            background-position: 1px 5px;
+                            font-size: 1.2rem;
+                            font-style: italic;                 
+                            padding: $sizePx/20;
+                            border-left: 7px solid #ccc;  
+                            text-indent: $sizePx/2;
+                            line-height: 2;                      
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // footer
+
+    .footer__wrap-primary {
+        background-color: #393a42;
+        color: $colorW;
+
+        .footer__wrap-secondary {
+            display: flex;
+            flex-wrap: wrap;           
+            padding: $sizePx/4 0 $sizePx/5 0;
+
+            .footer__conteiner-primary {
+                margin: 5px $sizeDeg/15 0 0;
+
+                .footer__title {
+                    margin-bottom: $sizePx/5;
+                }
+            }
+
+            .footer__conteiner-secondary {
+                margin: $sizePx/10 $sizeDeg/12 0 0;
+                width: $sizeDeg/3.5;
+
+                .footer-conteiner-secondary__item-primary {
+                    margin-bottom: $sizePx/5;
+                    padding-bottom: $sizePx/5;
+                    border-bottom: 1px solid $colorW;
+                }
+
+                .footer-conteiner-secondary__item-secondary {
+                    padding-bottom: $sizePx/20;
+                }
+            }
+
+            .footer__conteiner-third {
+                margin: $sizePx/10;
+
+                .footer-conteiner-third__link {
+
+                    .footer-conteiner-third__link-item {
+                        width: $sizeDeg/3;
+                        margin-left: $sizePx/20;
+                    }
+                }
+            }            
+        }
+
+        .footer__conteiner-special {
+            width: 65%;
+            margin: 0 auto;
+            border-top: 1px solid $colorW;
+            padding: $sizePx/10 0 $sizePx/3 0;
+            text-align: center;
+        }
+    }
+}
